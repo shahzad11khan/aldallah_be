@@ -3,6 +3,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db.js');
 const step1Routes = require('./routes/step1.Routes.js');
+const step2Routes = require('./routes/step2.Routes.js');
 const verifyOtp = require('./controllers//verify.Otp.Controller.js');
 
 //swagger
@@ -34,6 +35,7 @@ app.get('/api-docs',(req,res)=>{
 
 // API Routes
 app.use('/api/step1', step1Routes);
+app.use('/api/step2', step2Routes);
 // opt verification route
 app.post('/api/verify-otp', verifyOtp);
 
